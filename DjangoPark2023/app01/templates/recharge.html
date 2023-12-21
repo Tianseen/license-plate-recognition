@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>会员充值</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <br>
+            <!-- 充值的表单 -->
+            <form method="post" action=".">
+                <!-- Django中需要POST数据的地方都必须有csrf_token -->
+                {% csrf_token %}
+                <div class="form-group">
+                    <!-- 标签 -->
+                    <label for="title">车牌号</label>
+                    <!-- 文本框 -->
+                    <input type="text" class="form-control" id="carnum" name="carnum">
+                </div>
+                <!-- 充值套餐 -->
+                <div class="form-group">
+                    <label for="body">充值天数</label>
+                    <!-- 文本区域 -->
+                    <input type="text" class="form-control" id="chargedays" name="chargedays" rows="6">
+                </div>
+                <!-- 提交按钮 -->
+                <button type="submit" class="btn btn-primary">提交充值</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
